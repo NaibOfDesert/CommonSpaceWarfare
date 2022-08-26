@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1644645241483946961}
   - component: {fileID: 5419339137070796440}
-  - component: {fileID: 8134269904808193709}
   m_Layer: 0
   m_Name: playerShip1_blue
   m_TagString: Untagged
@@ -84,18 +83,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8134269904808193709
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4657966268726991228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4776d63ccd4aff40bb1e413b27f157e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4879584014369579212
 GameObject:
   m_ObjectHideFlags: 0
@@ -106,6 +93,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8089073030446216807}
   - component: {fileID: 5883365579625762871}
+  - component: {fileID: 4279815084156013870}
+  - component: {fileID: 8180286595247649316}
+  - component: {fileID: 6369094864492263742}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -158,3 +148,52 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!50 &4279815084156013870
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4879584014369579212}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!58 &8180286595247649316
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4879584014369579212}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.35
+--- !u!114 &6369094864492263742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4879584014369579212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d62b5badc14cdb442af5437a74d21339, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
