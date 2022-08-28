@@ -16,7 +16,15 @@ public class Shooter : MonoBehaviour
     [SerializeField] float minimumFiringRate = 1f;
 
     [HideInInspector] public bool isFiring;
+    
     Coroutine firingCoroutine;
+    AudioPlayer audioPlayer;
+
+    private void Awake()
+    {
+        audioPlayer = FindObjectOfType<AudioPlayer>();     
+    }
+
     void Start()
     {
         if(useAI)
@@ -49,19 +57,29 @@ public class Shooter : MonoBehaviour
         while(true)
         {
             GameObject instance = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-            Destroy(instance, projectileLifetime);
+
 
             Rigidbody2D rb = instance.GetComponent<Rigidbody2D>(); 
             if(rb != null)
             {
                 rb.velocity = transform.up * projectileSpeed;
             }
+            Destroy(instance, projectileLifetime);
+
+
 
             if (useAI)
             {
                 float timeToNextProjectile = Random.Range(baseFiringRate - firingRateVariance, baseFiringRate + firingRateVariance);
+                audioPlayer.PlayShootingClip();
                 yield return new WaitForSeconds(Mathf.Clamp(timeToNextProjectile, minimumFiringRate, float.MaxValue));
-            } else yield return new WaitForSeconds(baseFiringRate);
+            }
+            else
+            {
+                audioPlayer.PlayShootingClip();
+                yield return new WaitForSeconds(baseFiringRate);
+            }
+
         }
     }
 }
